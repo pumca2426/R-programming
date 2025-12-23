@@ -1,0 +1,5 @@
+library('RMySQL')
+mysql = dbConnect(MySQL(),user='root',password="",dbname='mca', host='localhost')
+record = dbSendQuery(mysql, "select * from student where marks>=80")
+data_frame = fetch(record,n=3)
+print(data_frame)
